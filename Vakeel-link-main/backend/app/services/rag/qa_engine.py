@@ -12,7 +12,10 @@ from .retrieval_from_qdrant import LegalRetriever
 # CONFIG
 # ─────────────────────────────────────────────
 GROQ_MODELS = [
-    "llama-3.1-8b-instant",      # prefer free-tier friendly model first
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-120b",
+    "llama-3.1-8b-instant",
     "llama-3.3-70b-versatile",
 ]
 GEMINI_MODELS = ["gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash"]
@@ -720,16 +723,40 @@ class LegalQAEngine:
         # Always prepare chunk-based citations up front
         chunk_citations = self._build_citations_from_chunks(results)
         chunk_sections, chunk_cases, chunk_acts = self._extract_cited_lists_from_chunks(results)
+        weak = (max_score < 0.70)
 
-        # Weak / empty retrieval: do not run ungrounded Senior Counsel persona
-        weak = (not results) or (max_score < score_floor and len(results) < min_hits)
-        if not results:
-            out = self._insufficient_context_answer(
-                query, results, domain_default, confidence_score,
-                retrieval_status, retrieval_notice, retrieval_backend,
+        # Strict boundary grounding for 30-clause knowledge base:
+        # If query has no results OR maximum similarity score is below score_floor (0.65):
+        if (not results) or (max_score < score_floor):
+            print(f"[AI] Out of database query (hits={len(results)}, max_score={max_score:.3f} < floor {score_floor}). Refusing.")
+            refusal_msg = (
+                "I don't have any idea about this. "
+                "This topic is outside my verified 30-clause legal database "
+                "(which is strictly restricted to the Consumer Protection Act, 2019 and E-Commerce Consumer Rules)."
             )
-            out["domain_candidates"] = domain_candidates
-            return out
+            return {
+                "domain": "out_of_scope",
+                "summary": refusal_msg,
+                "analysis": refusal_msg,
+                "answer": refusal_msg,
+                "facts": "",
+                "issues": "",
+                "conclusion": refusal_msg,
+                "cited_sections": [],
+                "cited_cases": [],
+                "cited_acts": [],
+                "citations": [],
+                "recommended_lawyers": [],
+                "confidence_score": 0.0,
+                "retrieved_chunks": [],
+                "retrieval_status": "out_of_scope",
+                "retrieval_notice": "Out of domain query — strictly grounded refusal.",
+                "llm_provider": "none",
+                "retrieval_backend": retrieval_backend,
+                "used_chunk_ids": [],
+                "domain_candidates": domain_candidates,
+                "disclaimer": DISCLAIMER,
+            }
 
         context_blocks: List[str] = []
         for index, result in enumerate(results[:6], start=1):

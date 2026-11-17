@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     SUPABASE_URL: str = ""
     SUPABASE_KEY: str = ""
     SUPABASE_SERVICE_ROLE_KEY: str = ""
+    SUPABASE_PROJECT_ID: Optional[str] = None
+    DATABASE_URL: Optional[str] = None
     JWT_SECRET: str = "dev-secret"
 
     # AI & Vector DB

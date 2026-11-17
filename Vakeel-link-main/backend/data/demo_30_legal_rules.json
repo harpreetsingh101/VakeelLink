@@ -1,0 +1,242 @@
+[
+  {
+    "clause_id": 1,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(7)",
+    "category": "Definitions",
+    "clause_text": "Under Section 2(7), a 'Consumer' is any person who buys goods or hires services for consideration, but excludes anyone who obtains goods for resale or commercial purposes.",
+    "keywords": ["consumer", "definition", "commercial purpose", "resale", "goods", "services"]
+  },
+  {
+    "clause_id": 2,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(10)",
+    "category": "Definitions",
+    "clause_text": "Under Section 2(10), a 'Defect' means any fault, imperfection, or shortcoming in quality, quantity, potency, purity, or standard required by law or contract.",
+    "keywords": ["defect", "goods", "fault", "quality", "potency", "purity", "imperfection"]
+  },
+  {
+    "clause_id": 3,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(11)",
+    "category": "Definitions",
+    "clause_text": "Under Section 2(11), a 'Deficiency' means any fault, imperfection, shortcoming, or inadequacy in the quality, nature, and manner of performance of a service.",
+    "keywords": ["deficiency", "service", "shortcoming", "inadequacy", "fault"]
+  },
+  {
+    "clause_id": 4,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(47)",
+    "category": "Definitions",
+    "clause_text": "Under Section 2(47), an 'Unfair Trade Practice' includes false representation of goods, misleading warranty claims, failure to issue bill/cash memo, and refusing to take back defective goods.",
+    "keywords": ["unfair trade practice", "false representation", "warranty", "cash memo", "bill", "defective goods"]
+  },
+  {
+    "clause_id": 5,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(28)",
+    "category": "Definitions",
+    "clause_text": "Under Section 2(28), misleading advertisements falsely describe products, give false guarantees, or deliberately conceal important information from consumers.",
+    "keywords": ["misleading advertisement", "false guarantee", "conceal information", "false description"]
+  },
+  {
+    "clause_id": 6,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(9)(i)",
+    "category": "Consumer Rights",
+    "clause_text": "Consumers have the right to be protected against marketing of goods, products, and services that are hazardous to life and property.",
+    "keywords": ["right to safety", "hazardous", "life", "property", "protection"]
+  },
+  {
+    "clause_id": 7,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(9)(ii)",
+    "category": "Consumer Rights",
+    "clause_text": "Consumers have the right to be informed about the quality, quantity, potency, purity, standard, and price of goods or services to prevent unfair practices.",
+    "keywords": ["right to information", "price", "quality", "standard", "informed"]
+  },
+  {
+    "clause_id": 8,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(9)(iii)",
+    "category": "Consumer Rights",
+    "clause_text": "Consumers have the right to be assured access to a variety of goods and services at competitive prices wherever possible.",
+    "keywords": ["right to choice", "competitive prices", "access", "variety"]
+  },
+  {
+    "clause_id": 9,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(9)(iv)",
+    "category": "Consumer Rights",
+    "clause_text": "Consumers have the right to be heard and assured that their interests will receive due consideration in appropriate consumer forums.",
+    "keywords": ["right to be heard", "representation", "consumer forum", "interests"]
+  },
+  {
+    "clause_id": 10,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 2(9)(v)",
+    "category": "Consumer Rights",
+    "clause_text": "Consumers have the right to seek redressal against unfair trade practices or exploitation, and the right to consumer awareness and education.",
+    "keywords": ["right to redressal", "consumer education", "exploitation", "awareness"]
+  },
+  {
+    "clause_id": 11,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 10",
+    "category": "CCPA",
+    "clause_text": "Under Section 10, the Central Government establishes the Central Consumer Protection Authority (CCPA) to protect, promote, and enforce consumer rights as a class.",
+    "keywords": ["CCPA", "Central Consumer Protection Authority", "enforce", "class action"]
+  },
+  {
+    "clause_id": 12,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 20",
+    "category": "CCPA",
+    "clause_text": "Under Section 20, the CCPA has the statutory power to order recall of dangerous goods, refund of prices paid, and discontinuation of unfair trade practices.",
+    "keywords": ["recall", "refund", "dangerous goods", "discontinuation", "power"]
+  },
+  {
+    "clause_id": 13,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 21",
+    "category": "CCPA",
+    "clause_text": "Under Section 21, the CCPA can impose penalties up to ₹10 Lakhs on manufacturers and endorsers for misleading ads, rising up to ₹50 Lakhs for subsequent violations.",
+    "keywords": ["penalties", "10 lakhs", "50 lakhs", "misleading ads", "endorser"]
+  },
+  {
+    "clause_id": 14,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 21(2)",
+    "category": "CCPA",
+    "clause_text": "The CCPA can prohibit a celebrity endorser of a misleading advertisement from making any endorsement for up to 1 year, and up to 3 years for subsequent violations.",
+    "keywords": ["celebrity endorser", "ban", "prohibition", "endorsement", "1 year", "3 years"]
+  },
+  {
+    "clause_id": 15,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 34",
+    "category": "Redressal Commission",
+    "clause_text": "Under Section 34, the District Consumer Disputes Redressal Commission entertains complaints where the value of goods or services paid does not exceed ₹50 Lakhs.",
+    "keywords": ["District Commission", "pecuniary jurisdiction", "50 lakhs", "Section 34"]
+  },
+  {
+    "clause_id": 16,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 47",
+    "category": "Redressal Commission",
+    "clause_text": "Under Section 47, the State Consumer Disputes Redressal Commission entertains complaints where value exceeds ₹50 Lakhs but does not exceed ₹2 Crores.",
+    "keywords": ["State Commission", "pecuniary jurisdiction", "50 lakhs", "2 crores", "Section 47"]
+  },
+  {
+    "clause_id": 17,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 58",
+    "category": "Redressal Commission",
+    "clause_text": "Under Section 58, the National Consumer Disputes Redressal Commission (NCDRC) entertains complaints where the value exceeds ₹2 Crores.",
+    "keywords": ["National Commission", "NCDRC", "2 crores", "pecuniary jurisdiction", "Section 58"]
+  },
+  {
+    "clause_id": 18,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 69",
+    "category": "Redressal Commission",
+    "clause_text": "Under Section 69, a consumer complaint must be filed within 2 years from the date on which the cause of action arose.",
+    "keywords": ["limitation period", "2 years", "cause of action", "filing deadline", "time limit", "Section 69"]
+  },
+  {
+    "clause_id": 19,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 41",
+    "category": "Redressal Commission",
+    "clause_text": "Under Section 41, any person aggrieved by an order of the District Commission may prefer an appeal to the State Commission within 45 days from the date of the order.",
+    "keywords": ["appeal", "State Commission", "District Commission", "45 days", "order", "Section 41"]
+  },
+  {
+    "clause_id": 20,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 35 & Rules",
+    "category": "Redressal Commission",
+    "clause_text": "Complaints filed in the District Commission with claims up to ₹5 Lakhs are completely exempt from paying any court or application fee.",
+    "keywords": ["court fee", "exemption", "5 lakhs", "free filing", "no fee"]
+  },
+  {
+    "clause_id": 21,
+    "act": "Consumer Protection (E-Commerce) Rules, 2020",
+    "section": "Rule 4(4)",
+    "category": "E-Commerce",
+    "clause_text": "Every e-commerce entity must appoint a nodal grievance officer and acknowledge consumer complaints within 48 hours.",
+    "keywords": ["grievance officer", "e-commerce", "48 hours", "acknowledgement", "Rule 4"]
+  },
+  {
+    "clause_id": 22,
+    "act": "Consumer Protection (E-Commerce) Rules, 2020",
+    "section": "Rule 4(5)",
+    "category": "E-Commerce",
+    "clause_text": "E-commerce entities must resolve consumer grievances within 1 month (30 days) from the date of receipt of the complaint.",
+    "keywords": ["complaint resolution", "30 days", "1 month", "e-commerce", "resolution deadline"]
+  },
+  {
+    "clause_id": 23,
+    "act": "Consumer Protection (E-Commerce) Rules, 2020",
+    "section": "Rule 5(1)",
+    "category": "E-Commerce",
+    "clause_text": "E-commerce platforms must clearly display the country of origin, expiry date, manufacturer details, and total price with breakup for all listed goods.",
+    "keywords": ["country of origin", "expiry date", "price breakup", "manufacturer details", "display"]
+  },
+  {
+    "clause_id": 24,
+    "act": "Consumer Protection (E-Commerce) Rules, 2020",
+    "section": "Rule 6",
+    "category": "E-Commerce",
+    "clause_text": "E-commerce sellers cannot impose cancellation charges on consumers unless similar charges are borne by the seller for unilateral cancellations.",
+    "keywords": ["cancellation charges", "cancellation fee", "unilateral cancellation", "refund"]
+  },
+  {
+    "clause_id": 25,
+    "act": "Consumer Protection (E-Commerce) Rules, 2020",
+    "section": "Rule 6(2)",
+    "category": "E-Commerce",
+    "clause_text": "E-commerce entities are prohibited from organizing fraudulent flash sales or back-to-back sales that limit consumer choice or artificially inflate prices.",
+    "keywords": ["flash sales", "fraudulent", "price manipulation", "prohibition", "choice"]
+  },
+  {
+    "clause_id": 26,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 84",
+    "category": "Product Liability",
+    "clause_text": "Under Section 84, a product manufacturer is liable in a product liability action if the product has a manufacturing defect, defective design, or lacks adequate warning instructions.",
+    "keywords": ["product liability", "manufacturer liability", "defective design", "manufacturing defect", "warning instructions", "Section 84"]
+  },
+  {
+    "clause_id": 27,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 85",
+    "category": "Product Liability",
+    "clause_text": "Under Section 85, a product service provider is liable for harm caused if the service provided was deficient, negligent, or violated safety standards.",
+    "keywords": ["service provider liability", "harm", "negligence", "safety standards", "Section 85"]
+  },
+  {
+    "clause_id": 28,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 74",
+    "category": "Mediation",
+    "clause_text": "Under Section 74, the State Government establishes Consumer Mediation Cells attached to District and State Commissions to resolve disputes through voluntary mediation.",
+    "keywords": ["mediation", "Consumer Mediation Cell", "voluntary settlement", "Section 74"]
+  },
+  {
+    "clause_id": 29,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 72",
+    "category": "Penalties",
+    "clause_text": "Under Section 72, failure to comply with an order of the District, State, or National Commission is punishable with imprisonment between 1 month to 3 years, or fine from ₹25,000 to ₹1 Lakh, or both.",
+    "keywords": ["penalty", "imprisonment", "non-compliance", "1 month to 3 years", "fine", "Section 72"]
+  },
+  {
+    "clause_id": 30,
+    "act": "Consumer Protection Act, 2019",
+    "section": "Section 35",
+    "category": "Penalties",
+    "clause_text": "Under Section 35, where the Commission finds a complaint to be frivolous or vexatious, it may dismiss the complaint and order the complainant to pay costs up to ₹50,000 to the opposite party.",
+    "keywords": ["frivolous complaint", "vexatious", "penalty", "50,000", "costs", "Section 35"]
+  }
+]

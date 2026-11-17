@@ -91,8 +91,9 @@ class LocalLegalStore:
     @classmethod
     def get(cls, embeddings_dir: Optional[str] = None, corpus_dir: Optional[str] = None) -> "LocalLegalStore":
         if cls._instance is None:
-            emb = embeddings_dir or os.getenv("LOCAL_EMBEDDINGS_DIR", r"G:\Hackathon\embeddings")
-            corp = corpus_dir or os.getenv("LOCAL_CORPUS_DIR", r"G:\Hackathon\corpus")
+            from app.core.config import settings
+            emb = embeddings_dir or getattr(settings, "LOCAL_EMBEDDINGS_DIR", None) or os.getenv("LOCAL_EMBEDDINGS_DIR", r"data\embeddings")
+            corp = corpus_dir or getattr(settings, "LOCAL_CORPUS_DIR", None) or os.getenv("LOCAL_CORPUS_DIR", r"data")
             cls._instance = cls(emb, corp)
         return cls._instance
 
@@ -153,11 +154,11 @@ class LocalLegalStore:
                 meta = metadata_list[i] if isinstance(metadata_list[i], dict) else {}
                 chunk_text = corpus_texts[i] if i < len(corpus_texts) else ""
                 if not chunk_text:
-                    chunk_text = _as_text(meta.get("legal_issue") or meta.get("case_name") or "")
+                    chunk_text = _as_text(meta.get("clause_text") or meta.get("legal_issue") or meta.get("case_name") or "")
 
-                sections = _as_text(meta.get("sections") or meta.get("section_number") or "")
-                acts = _as_text(meta.get("acts") or meta.get("act_name") or "")
-                case_name = _as_text(meta.get("case_name") or meta.get("law_name") or "")
+                sections = _as_text(meta.get("sections") or meta.get("section_number") or meta.get("section") or "")
+                acts = _as_text(meta.get("acts") or meta.get("act_name") or meta.get("act") or "")
+                case_name = _as_text(meta.get("case_name") or meta.get("law_name") or (f"Clause {meta.get('clause_id')}" if meta.get("clause_id") else ""))
                 law_name = case_name or _as_text(meta.get("law_name") or "")
 
                 records.append(

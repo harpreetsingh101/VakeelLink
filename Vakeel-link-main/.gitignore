@@ -9,6 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
+!frontend/dist/
+!frontend/dist/
 dist-ssr
 *.local
 
@@ -35,6 +37,8 @@ dist-ssr
 .env.production.local
 .env.staging
 *.env
+!.env.example
+!backend/.env.example
 
 # Python
 __pycache__/
@@ -49,6 +53,7 @@ ENV/
 .venv/
 *.egg-info/
 dist/
+!frontend/dist/
 build/
 .eggs/
 .pytest_cache/
@@ -66,7 +71,9 @@ enriched_corpus/
 embeddings/
 
 # Offline local auth store (created when Supabase is unreachable)
-backend/data/
+backend/data/local_*.json
+!backend/data/demo_30_legal_rules.json
+!backend/data/embeddings/
 
 # Local files
 hi.py

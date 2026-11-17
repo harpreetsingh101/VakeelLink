@@ -1,10 +1,15 @@
+from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from app.core.config import settings
 from app.core.limiter import limiter
 from app.middleware.error_handler import register_error_handlers
+
+_FRONTEND_DIST = Path(__file__).resolve().parents[2] / "frontend" / "dist"
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -124,8 +129,21 @@ def health_rag():
 
 @app.api_route("/", methods=["GET", "HEAD"])
 def root():
-    # HEAD used by uptime bots / CDNs — avoid noisy 405 Method Not Allowed
+    # Return built React SPA if available, otherwise API greeting
+    if _FRONTEND_DIST.exists() and (_FRONTEND_DIST / "index.html").exists():
+        return FileResponse(_FRONTEND_DIST / "index.html")
     return {"message": f"Welcome to the {settings.PROJECT_NAME}"}
+
+
+@app.get("/database", tags=["system"])
+@app.get("/database.html", tags=["system"])
+def view_database():
+    """Live interactive viewer for the 30-Clause Legal Demo Database."""
+    db_file = _FRONTEND_DIST / "database.html"
+    if db_file.exists():
+        return FileResponse(db_file)
+    return HTMLResponse("<h1>Database file not found</h1>", status_code=404)
+
 
 # Import-guarded router mounts
 try:
@@ -188,3 +206,19 @@ try:
     app.include_router(consultations.router, prefix=f"{settings.API_V1_STR}/consultations", tags=["consultations"])
 except ImportError as e:
     print("Failed to import Consultations router:", e)
+
+# ── Serve React Frontend SPA Assets & Client Routing ─────────────────────────
+if _FRONTEND_DIST.exists() and (_FRONTEND_DIST / "index.html").exists():
+    if (_FRONTEND_DIST / "assets").is_dir():
+        app.mount("/assets", StaticFiles(directory=str(_FRONTEND_DIST / "assets")), name="spa_assets")
+    if (_FRONTEND_DIST / "media").is_dir():
+        app.mount("/media", StaticFiles(directory=str(_FRONTEND_DIST / "media")), name="spa_media")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def serve_spa_frontend(full_path: str):
+        target = _FRONTEND_DIST / full_path
+        if full_path and target.is_file():
+            return FileResponse(target)
+        if full_path.rstrip("/") in {"database", "database.html"}:
+            return FileResponse(_FRONTEND_DIST / "database.html")
+        return FileResponse(_FRONTEND_DIST / "index.html")

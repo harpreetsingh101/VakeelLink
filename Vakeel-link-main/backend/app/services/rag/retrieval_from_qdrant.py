@@ -442,8 +442,8 @@ class LegalRetriever:
                         notices.append("Blended Qdrant + local corpus hits for better coverage.")
                     print(f"[{backend_used.upper()}] hits={len(all_results)}")
 
-            # 3) If local-first mode still empty, try Qdrant once
-            if not all_results and USE_LOCAL and QDRANT_URL and QDRANT_API_KEY:
+            # 3) Remote Qdrant fallback (disabled in local-first demo mode for fast response)
+            if not all_results and not USE_LOCAL and QDRANT_URL and QDRANT_API_KEY:
                 q_hits, q_errors = self._search_qdrant(
                     query, query_vec, target_collections, top_k=top_k, expanded_vec=expanded_vec
                 )

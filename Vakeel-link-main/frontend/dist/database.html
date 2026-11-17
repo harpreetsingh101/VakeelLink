@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VakeelLink — Verified 30-Clause Ground-Truth Legal Database</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0b1120; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    </style>
+</head>
+<body class="bg-[#090d16] text-slate-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Top Navbar -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-8 border-b border-slate-800 gap-4">
+            <div>
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-300 bg-clip-text text-transparent">VakeelLink</span>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-600/80 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Active Vector Store
+                    </span>
+                    <span class="px-2 py-0.5 rounded text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700">Minor Project Demo</span>
+                </div>
+                <h1 class="text-3xl font-extrabold text-white mt-2 tracking-tight">Verified Ground-Truth Legal Database (30 Clauses)</h1>
+                <p class="text-slate-400 text-sm mt-1">Domain: Consumer Protection Act, 2019 & E-Commerce Consumer Rules, 2020 | All-MiniLM-L6-v2 Embeddings</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/assistant" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 font-semibold text-sm text-white shadow-lg shadow-indigo-600/30 transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                    Open AI Assistant &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Evaluation Guidance Banner -->
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-indigo-950/60 to-blue-950/40 border border-indigo-800/40 mb-8 backdrop-blur">
+            <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider flex items-center gap-2">
+                <span>📋 Evaluator / Teacher Demonstration Instructions</span>
+            </h3>
+            <p class="text-slate-300 text-sm mt-1.5 leading-relaxed">
+                This table contains the complete <strong>30 legal ground-truth clauses</strong> loaded into the local MiniLM vector engine. Evaluators can test both RAG retrieval accuracy and zero-hallucination boundaries:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 text-xs">
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-900/60">
+                    <span class="font-bold text-emerald-400 block mb-1">✅ Query 1 (In-Database Query):</span>
+                    <span class="text-slate-300 italic">"What is the refund timeline for an e-commerce platform and what is the limitation period for filing a consumer complaint under Section 69?"</span>
+                    <span class="text-emerald-400/90 block mt-1 font-semibold">&rarr; Chatbot answers accurately citing Section 69 & E-Commerce Rules.</span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-rose-900/60">
+                    <span class="font-bold text-rose-400 block mb-1">❌ Query 2 (Out-of-Database Query):</span>
+                    <span class="text-slate-300 italic">"What is the procedure and international treaty penalty for unauthorized satellite deployment in orbital space?"</span>
+                    <span class="text-rose-400/90 block mt-1 font-semibold">&rarr; Chatbot strictly refuses: "I don't have any idea about this." (Zero hallucination).</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metric Badges -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-medium">Total Verified Clauses</div>
+                <div class="text-3xl font-extrabold text-white mt-1">30 Rules</div>
+                <div class="text-xs text-indigo-400 mt-1">Numbered #1 to #30</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-medium">Vector Dimensions</div>
+                <div class="text-3xl font-extrabold text-white mt-1">384-D</div>
+                <div class="text-xs text-cyan-400 mt-1">MiniLM Dense Embeddings</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-medium">Statutes Covered</div>
+                <div class="text-3xl font-extrabold text-white mt-1">2 Acts</div>
+                <div class="text-xs text-amber-400 mt-1">CPA 2019 & E-Com 2020</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-medium">Grounding Cutoff</div>
+                <div class="text-3xl font-extrabold text-emerald-400 mt-1">Cosine &ge; 0.65</div>
+                <div class="text-xs text-emerald-500 mt-1">Strict refusal on low score</div>
+            </div>
+        </div>
+
+        <!-- Interactive Search & Table -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-4 bg-slate-900 border-b border-slate-800 flex flex-col md:flex-row justify-between items-center gap-3">
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <span class="font-bold text-sm text-slate-200 whitespace-nowrap">Statutory Knowledge Base:</span>
+                    <input type="text" id="searchInput" placeholder="Live search clauses (e.g. refund, Section 69, 50,000, e-commerce)..." class="w-full md:w-96 px-3.5 py-2 rounded-lg bg-slate-950 border border-slate-700 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
+                </div>
+                <div class="text-xs text-slate-400">
+                    Showing <span id="visibleCount" class="font-bold text-indigo-400">30</span> of 30 clauses
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-slate-950 text-slate-400 uppercase text-xs tracking-wider border-b border-slate-800">
+                        <tr>
+                            <th class="p-4 text-center w-16">#</th>
+                            <th class="p-4 w-32">Category</th>
+                            <th class="p-4 w-56">Act Title</th>
+                            <th class="p-4 w-40">Section / Rule</th>
+                            <th class="p-4">Statutory Clause Text</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rulesBody">
+                        
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="definitions consumer protection act, 2019 section 2(7) under section 2(7), a 'consumer' is any person who buys goods or hires services for consideration, but excludes anyone who obtains goods for resale or commercial purposes. consumer, definition, commercial purpose, resale, goods, services">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#1</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Definitions</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(7)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 2(7), a 'Consumer' is any person who buys goods or hires services for consideration, but excludes anyone who obtains goods for resale or commercial purposes.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="definitions consumer protection act, 2019 section 2(10) under section 2(10), a 'defect' means any fault, imperfection, or shortcoming in quality, quantity, potency, purity, or standard required by law or contract. defect, goods, fault, quality, potency, purity, imperfection">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#2</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Definitions</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(10)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 2(10), a 'Defect' means any fault, imperfection, or shortcoming in quality, quantity, potency, purity, or standard required by law or contract.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="definitions consumer protection act, 2019 section 2(11) under section 2(11), a 'deficiency' means any fault, imperfection, shortcoming, or inadequacy in the quality, nature, and manner of performance of a service. deficiency, service, shortcoming, inadequacy, fault">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#3</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Definitions</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(11)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 2(11), a 'Deficiency' means any fault, imperfection, shortcoming, or inadequacy in the quality, nature, and manner of performance of a service.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="definitions consumer protection act, 2019 section 2(47) under section 2(47), an 'unfair trade practice' includes false representation of goods, misleading warranty claims, failure to issue bill/cash memo, and refusing to take back defective goods. unfair trade practice, false representation, warranty, cash memo, bill, defective goods">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#4</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Definitions</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(47)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 2(47), an 'Unfair Trade Practice' includes false representation of goods, misleading warranty claims, failure to issue bill/cash memo, and refusing to take back defective goods.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="definitions consumer protection act, 2019 section 2(28) under section 2(28), misleading advertisements falsely describe products, give false guarantees, or deliberately conceal important information from consumers. misleading advertisement, false guarantee, conceal information, false description">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#5</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Definitions</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(28)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 2(28), misleading advertisements falsely describe products, give false guarantees, or deliberately conceal important information from consumers.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="consumer rights consumer protection act, 2019 section 2(9)(i) consumers have the right to be protected against marketing of goods, products, and services that are hazardous to life and property. right to safety, hazardous, life, property, protection">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#6</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Consumer Rights</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(9)(i)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Consumers have the right to be protected against marketing of goods, products, and services that are hazardous to life and property.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="consumer rights consumer protection act, 2019 section 2(9)(ii) consumers have the right to be informed about the quality, quantity, potency, purity, standard, and price of goods or services to prevent unfair practices. right to information, price, quality, standard, informed">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#7</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Consumer Rights</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(9)(ii)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Consumers have the right to be informed about the quality, quantity, potency, purity, standard, and price of goods or services to prevent unfair practices.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="consumer rights consumer protection act, 2019 section 2(9)(iii) consumers have the right to be assured access to a variety of goods and services at competitive prices wherever possible. right to choice, competitive prices, access, variety">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#8</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Consumer Rights</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(9)(iii)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Consumers have the right to be assured access to a variety of goods and services at competitive prices wherever possible.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="consumer rights consumer protection act, 2019 section 2(9)(iv) consumers have the right to be heard and assured that their interests will receive due consideration in appropriate consumer forums. right to be heard, representation, consumer forum, interests">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#9</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Consumer Rights</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(9)(iv)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Consumers have the right to be heard and assured that their interests will receive due consideration in appropriate consumer forums.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="consumer rights consumer protection act, 2019 section 2(9)(v) consumers have the right to seek redressal against unfair trade practices or exploitation, and the right to consumer awareness and education. right to redressal, consumer education, exploitation, awareness">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#10</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Consumer Rights</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 2(9)(v)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Consumers have the right to seek redressal against unfair trade practices or exploitation, and the right to consumer awareness and education.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="ccpa consumer protection act, 2019 section 10 under section 10, the central government establishes the central consumer protection authority (ccpa) to protect, promote, and enforce consumer rights as a class. ccpa, central consumer protection authority, enforce, class action">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#11</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">CCPA</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 10</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 10, the Central Government establishes the Central Consumer Protection Authority (CCPA) to protect, promote, and enforce consumer rights as a class.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="ccpa consumer protection act, 2019 section 20 under section 20, the ccpa has the statutory power to order recall of dangerous goods, refund of prices paid, and discontinuation of unfair trade practices. recall, refund, dangerous goods, discontinuation, power">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#12</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">CCPA</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 20</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 20, the CCPA has the statutory power to order recall of dangerous goods, refund of prices paid, and discontinuation of unfair trade practices.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="ccpa consumer protection act, 2019 section 21 under section 21, the ccpa can impose penalties up to ₹10 lakhs on manufacturers and endorsers for misleading ads, rising up to ₹50 lakhs for subsequent violations. penalties, 10 lakhs, 50 lakhs, misleading ads, endorser">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#13</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">CCPA</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 21</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 21, the CCPA can impose penalties up to ₹10 Lakhs on manufacturers and endorsers for misleading ads, rising up to ₹50 Lakhs for subsequent violations.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="ccpa consumer protection act, 2019 section 21(2) the ccpa can prohibit a celebrity endorser of a misleading advertisement from making any endorsement for up to 1 year, and up to 3 years for subsequent violations. celebrity endorser, ban, prohibition, endorsement, 1 year, 3 years">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#14</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">CCPA</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 21(2)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">The CCPA can prohibit a celebrity endorser of a misleading advertisement from making any endorsement for up to 1 year, and up to 3 years for subsequent violations.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="redressal commission consumer protection act, 2019 section 34 under section 34, the district consumer disputes redressal commission entertains complaints where the value of goods or services paid does not exceed ₹50 lakhs. district commission, pecuniary jurisdiction, 50 lakhs, section 34">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#15</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Redressal Commission</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 34</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 34, the District Consumer Disputes Redressal Commission entertains complaints where the value of goods or services paid does not exceed ₹50 Lakhs.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="redressal commission consumer protection act, 2019 section 47 under section 47, the state consumer disputes redressal commission entertains complaints where value exceeds ₹50 lakhs but does not exceed ₹2 crores. state commission, pecuniary jurisdiction, 50 lakhs, 2 crores, section 47">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#16</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Redressal Commission</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 47</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 47, the State Consumer Disputes Redressal Commission entertains complaints where value exceeds ₹50 Lakhs but does not exceed ₹2 Crores.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="redressal commission consumer protection act, 2019 section 58 under section 58, the national consumer disputes redressal commission (ncdrc) entertains complaints where the value exceeds ₹2 crores. national commission, ncdrc, 2 crores, pecuniary jurisdiction, section 58">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#17</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Redressal Commission</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 58</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 58, the National Consumer Disputes Redressal Commission (NCDRC) entertains complaints where the value exceeds ₹2 Crores.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="redressal commission consumer protection act, 2019 section 69 under section 69, a consumer complaint must be filed within 2 years from the date on which the cause of action arose. limitation period, 2 years, cause of action, filing deadline, time limit, section 69">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#18</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Redressal Commission</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 69</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 69, a consumer complaint must be filed within 2 years from the date on which the cause of action arose.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="redressal commission consumer protection act, 2019 section 41 under section 41, any person aggrieved by an order of the district commission may prefer an appeal to the state commission within 45 days from the date of the order. appeal, state commission, district commission, 45 days, order, section 41">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#19</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Redressal Commission</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 41</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 41, any person aggrieved by an order of the District Commission may prefer an appeal to the State Commission within 45 days from the date of the order.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="redressal commission consumer protection act, 2019 section 35 & rules complaints filed in the district commission with claims up to ₹5 lakhs are completely exempt from paying any court or application fee. court fee, exemption, 5 lakhs, free filing, no fee">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#20</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Redressal Commission</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 35 & Rules</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Complaints filed in the District Commission with claims up to ₹5 Lakhs are completely exempt from paying any court or application fee.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="e-commerce consumer protection (e-commerce) rules, 2020 rule 4(4) every e-commerce entity must appoint a nodal grievance officer and acknowledge consumer complaints within 48 hours. grievance officer, e-commerce, 48 hours, acknowledgement, rule 4">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#21</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">E-Commerce</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection (E-Commerce) Rules, 2020</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Rule 4(4)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Every e-commerce entity must appoint a nodal grievance officer and acknowledge consumer complaints within 48 hours.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="e-commerce consumer protection (e-commerce) rules, 2020 rule 4(5) e-commerce entities must resolve consumer grievances within 1 month (30 days) from the date of receipt of the complaint. complaint resolution, 30 days, 1 month, e-commerce, resolution deadline">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#22</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">E-Commerce</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection (E-Commerce) Rules, 2020</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Rule 4(5)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">E-commerce entities must resolve consumer grievances within 1 month (30 days) from the date of receipt of the complaint.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="e-commerce consumer protection (e-commerce) rules, 2020 rule 5(1) e-commerce platforms must clearly display the country of origin, expiry date, manufacturer details, and total price with breakup for all listed goods. country of origin, expiry date, price breakup, manufacturer details, display">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#23</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">E-Commerce</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection (E-Commerce) Rules, 2020</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Rule 5(1)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">E-commerce platforms must clearly display the country of origin, expiry date, manufacturer details, and total price with breakup for all listed goods.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="e-commerce consumer protection (e-commerce) rules, 2020 rule 6 e-commerce sellers cannot impose cancellation charges on consumers unless similar charges are borne by the seller for unilateral cancellations. cancellation charges, cancellation fee, unilateral cancellation, refund">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#24</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">E-Commerce</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection (E-Commerce) Rules, 2020</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Rule 6</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">E-commerce sellers cannot impose cancellation charges on consumers unless similar charges are borne by the seller for unilateral cancellations.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="e-commerce consumer protection (e-commerce) rules, 2020 rule 6(2) e-commerce entities are prohibited from organizing fraudulent flash sales or back-to-back sales that limit consumer choice or artificially inflate prices. flash sales, fraudulent, price manipulation, prohibition, choice">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#25</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">E-Commerce</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection (E-Commerce) Rules, 2020</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Rule 6(2)</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">E-commerce entities are prohibited from organizing fraudulent flash sales or back-to-back sales that limit consumer choice or artificially inflate prices.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="product liability consumer protection act, 2019 section 84 under section 84, a product manufacturer is liable in a product liability action if the product has a manufacturing defect, defective design, or lacks adequate warning instructions. product liability, manufacturer liability, defective design, manufacturing defect, warning instructions, section 84">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#26</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Product Liability</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 84</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 84, a product manufacturer is liable in a product liability action if the product has a manufacturing defect, defective design, or lacks adequate warning instructions.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="product liability consumer protection act, 2019 section 85 under section 85, a product service provider is liable for harm caused if the service provided was deficient, negligent, or violated safety standards. service provider liability, harm, negligence, safety standards, section 85">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#27</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Product Liability</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 85</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 85, a product service provider is liable for harm caused if the service provided was deficient, negligent, or violated safety standards.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="mediation consumer protection act, 2019 section 74 under section 74, the state government establishes consumer mediation cells attached to district and state commissions to resolve disputes through voluntary mediation. mediation, consumer mediation cell, voluntary settlement, section 74">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#28</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Mediation</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 74</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 74, the State Government establishes Consumer Mediation Cells attached to District and State Commissions to resolve disputes through voluntary mediation.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="penalties consumer protection act, 2019 section 72 under section 72, failure to comply with an order of the district, state, or national commission is punishable with imprisonment between 1 month to 3 years, or fine from ₹25,000 to ₹1 lakh, or both. penalty, imprisonment, non-compliance, 1 month to 3 years, fine, section 72">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#29</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Penalties</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 72</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 72, failure to comply with an order of the District, State, or National Commission is punishable with imprisonment between 1 month to 3 years, or fine from ₹25,000 to ₹1 Lakh, or both.</td>
+    </tr>
+    
+
+    <tr class="rule-row border-b border-slate-800 hover:bg-slate-800/60 transition" data-search="penalties consumer protection act, 2019 section 35 under section 35, where the commission finds a complaint to be frivolous or vexatious, it may dismiss the complaint and order the complainant to pay costs up to ₹50,000 to the opposite party. frivolous complaint, vexatious, penalty, 50,000, costs, section 35">
+        <td class="p-4 font-mono font-bold text-indigo-400 text-center">#30</td>
+        <td class="p-4"><span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/60">Penalties</span></td>
+        <td class="p-4 font-semibold text-slate-200 whitespace-nowrap">Consumer Protection Act, 2019</td>
+        <td class="p-4 whitespace-nowrap"><span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-600/50">Section 35</span></td>
+        <td class="p-4 text-slate-300 leading-relaxed">Under Section 35, where the Commission finds a complaint to be frivolous or vexatious, it may dismiss the complaint and order the complainant to pay costs up to ₹50,000 to the opposite party.</td>
+    </tr>
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center text-xs text-slate-500 pb-12">
+            VakeelLink Minor Project &copy; 2026 &bull; Strict Vector-Grounded Retrieval Evaluation
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('searchInput');
+        const rows = document.querySelectorAll('.rule-row');
+        const countSpan = document.getElementById('visibleCount');
+
+        input.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase().trim();
+            let count = 0;
+            rows.forEach(r => {
+                const search = r.getAttribute('data-search') || '';
+                if (!val || search.includes(val)) {
+                    r.style.display = '';
+                    count++;
+                } else {
+                    r.style.display = 'none';
+                }
+            });
+            countSpan.textContent = count;
+        });
+    </script>
+</body>
+</html>

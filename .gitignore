@@ -1,0 +1,22 @@
+# Environment variables (NEVER COMMIT SECRETS)
+.env
+*.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.log
+.venv/
+env/
+venv/
+
+# Local fallback auth stores
+Vakeel-link-main/backend/data/local_*.json
+
+# OS files
+.DS_Store
+Thumbs.db
